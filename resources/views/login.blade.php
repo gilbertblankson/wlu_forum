@@ -24,7 +24,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-    			 		<h2 class="">Coming Soon</h2>
+    			 		<h2 class="">Welcome</h2>
 
                         <br />
                     </div>
@@ -39,7 +39,8 @@
        <div class="container">
 		    <div class="row">
 		        <div class="col-md-6 col-md-offset-3">
-		            <form class="login" role="form" method="post">
+		            <form class="login" role="form" action="/login" method="post">
+					{{csrf_field()}}
 						<div class="row">
 		              		<div class="col-md-12 form-group">
 		                        <input type="email" name="email" class="form-control" id="email" placeholder="email address">

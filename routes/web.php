@@ -19,3 +19,13 @@ Route::get('/team',"GeneralController@showTeamPage");
 Route::get('/contact',"GeneralController@showContactPage");
 Route::get('/sign-up',"GeneralController@showSignupPage");
 Route::get('login',"GeneralController@showLoginPage");
+
+/*Register a new user*/
+Route::post('/register-new-user',"Auth\RegisterController@register");
+
+/*Activate new user*/
+Route::get('/walulel/account/activation/{value}',"ActivateAccountController@activateAccount");
+Route::get('/verify',"ActivateAccountController@showVerifyPage");
+
+/*Login a new user */
+Route::post('/login',)

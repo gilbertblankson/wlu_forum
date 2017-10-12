@@ -29,7 +29,18 @@
 	                
 	                <div class="col-md-offset-2 col-md-8 col-sm-12 text-center">
 	                    <p class="padding">Sign up to receive our monthly bulletin which will always remain free to early adopters.</p>
-	                </div>
+                         
+                         @if(count($errors)>0)
+                            @foreach($errors->all() as $error)
+                               <div class="alert alert-danger"><i class="fa fa-warning-sign"></i> &nbsp; {{$error}}</div>
+                            @endforeach
+                        @endif
+                        
+                        @if($flash=session('message'))
+                        <div class="alert alert-black"><i class="fa fa-checked"></i> &nbsp; {{$flash}}</div>
+                        @endif
+
+                    </div><!--end md-offset-2 div-->
                 </div>
             </div>
         </div>
@@ -41,25 +52,26 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-offset-3 col-md-6 col-sm-12 text-center">
-	                <form class="sign-in" role="form" method="post">
-						<div class="row">
+	                <form class="sign-in" action="/register-new-user" role="form" method="post">
+						{{csrf_field()}}
+                        <div class="row">
 		              		<div class="col-md-6 form-group">
-		                        <input type="text" name="first_name" class="form-control" id="first_name" placeholder="first name">
+		                        <input required type="text" value="{{old('firstname')}}" name="firstname" class="form-control" id="first_name" placeholder="first name">
 		                    </div>
 		              		<div class="col-md-6 form-group">
-		                        <input type="text" name="last_name" class="form-control" id="last_name" placeholder="last name">
+		                        <input required type="text" value="{{old('lastname')}}" name="lastname" class="form-control" id="last_name" placeholder="last name">
 		                    </div>
 		              		<div class="col-md-12 form-group">
-		                        <input type="email" name="email" class="form-control" id="email" placeholder="email address" value="<?php if(isset($error)){echo $user_email;}?>">
+		                        <input required type="email" value="{{old('email')}}" name="email" class="form-control" id="email" placeholder="email address">
 		                    </div>
                             <div class="col-md-6 form-group">
-                                <input type="password" name="password" class="form-control" id="password" placeholder="password">
+                                <input required type="password" name="password" class="form-control" id="password" placeholder="password (Min: 8 characters)">
                             </div>
                             <div class="col-md-6 form-group">
-                             <input type="password" name="comfirm_password" class="form-control" id="confirm_password" placeholder="comfirm password">
+                             <input required type="password" name="password_confirmation" class="form-control" id="confirm_password" placeholder="confirm password">
                             </div>
                             <div class="col-md-12 form-group">
-                            <input type="text" name="street" class="form-control" id="street" placeholder="Street Name">
+                            <input required type="text" value="{{old('street_name')}}" name="street_name" class="form-control" id="street" placeholder="Street Name">
                             </div>
 		                    <div class="col-md-8 col-md-offset-2">
 		                      <input type="hidden" name="submit" value="signup">
@@ -67,7 +79,7 @@
 		                    </div>
 		                    <div class="col-md-12">
 		                    	<p class="text-muted">
-		             				Already have an account? <a href="login.php" class="link">Login</a>
+		             				Already have an account? <a href="/login" class="link">Login</a>
 								</p>
 		                    </div>
 		                    <div class="col-md-12 col-sm-offset-2">

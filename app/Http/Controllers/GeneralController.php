@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class GeneralController extends Controller
 {
     /*This controller contains functions to handle 

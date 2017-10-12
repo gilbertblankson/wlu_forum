@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Mail\ActivateAccount;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -27,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/sign-up';
 
     /**
      * Create a new controller instance.
@@ -48,10 +50,28 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
+            'firstname' => 'required|string|max:30',
+            'lastname' => 'required|string|max:50',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'password' => 'required|string|min:8|confirmed',
+            'street_name' => 'required|string|max:100',
         ]);
+    }
+
+    /*
+     * Generate activation code
+     * A hash using
+     * random string  + current time + md5 of microtime
+    */  
+
+    protected function generateActivationCode(){
+        
+        $current_time = time();
+        $random_string = md5(microtime());
+        $string_to_hash = $random_string.$current_time;
+        $final_code=$string_to_hash.str_random(20);
+
+        return $final_code;
     }
 
     /**
@@ -61,11 +81,33 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {
+    {   
+        $activation_code = $this->generateActivationCode();
+
         return User::create([
-            'name' => $data['name'],
+            'firstname' => $data['firstname'],
+            'lastname' => $data['lastname'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'street_name' => $data['street_name'],
+            'user_type' => 'N',
+            'confirmation_code'=>$activation_code,
         ]);
     }
+
+
+    public function register(Request $request){
+       
+        $this->validator($request->all())->validate(); //validate submission
+        $new_user = $this->create($request->all()); //register user
+
+        
+        \Mail::to($new_user->email)->send(new ActivateAccount($new_user));      
+
+        session()->flash('message','Successfully registered. An account activation link has been sent to your email.');
+
+        return redirect($this->redirectTo);
+    }
+
+
 }
