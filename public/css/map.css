@@ -1,0 +1,26 @@
+body, html {
+	margin:0;
+	height: 100%;
+}
+
+#wrap {
+    height: 100%;
+}
+
+
+#mapid {
+	position: fixed;
+    top: 0; /* if you have a 200px block at the top */
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#content {
+	position: absolute;
+	z-index: 2;
+	top: 50px;
+	left: 50px;
+	width: auto;
+	border: 2px solid lime;
+}

@@ -1,0 +1,14 @@
+/* ========== OTHER CSS STYLES TO LOAD ========== */
+@import url('main.css'); /* Loads the main.css styles for the website */
+
+
+/* ========== MEDIA QUERIES FOR SMALL SCREENS ========== */
+
+
+
+
+/* ========== MEDIA QUERIES FOR BIG SCREENS ========== */
+
+@media(min-width:768px) {
+
+}

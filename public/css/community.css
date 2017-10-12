@@ -1,0 +1,240 @@
+/* ========== OTHER CSS STYLES TO LOAD ========== */
+@import url('main.css'); /* Loads the main.css styles for the website */
+
+body {
+	background:#fff; /* sets background color to black */
+}
+
+.alert-black {
+	color:#fff;
+	background-color:#000;
+	border-color:#545454;
+}
+
+/* ========== CSS STYLES FOR THE NEWSLETTER FORM ========== */
+
+input, textarea {
+  font-family: 'Varela Round', sans-serif; /* sets the font set for both input and textarea text to Valera Round */
+  font-size: 18px; /* Sets the font-size to 18 */
+  font-size: 0.7em;
+  color: black;  /* Sets the font color to black */
+}
+
+input::-ms-clear, textarea::-ms-clear {
+  display: none; 
+}
+
+#comm-search {
+  padding: 2em; /* Gives padding of 2em to the signin box */
+}
+
+#comm-search input {
+  border-radius: 0.2em;  /* sets the border radius to 0.2 */
+  height: 60px;  /* sets the height of the input box to 60 */
+}
+
+#comm-search .form-control {
+  border: 1px solid #828282; /* sets a border to the sign input/textarea */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+#comm-search .form-control:focus {
+  border: 1px solid #ff5656; /* sets a border to the sign input/textarea */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.comm_search {
+  padding: 16px 30px; /* gives padding to the top and bottom, leaves both sides at 0 */
+  cursor: pointer; /* makes sure the cursor is on pointer for the button */
+  background: transparent; /* gives a transparent background to the button */
+  color: #fff; /* sets the text color on the button to white */
+  font-weight: bold; /* gives the font some boldness */
+  font-size: 0.9em; /* sets the font-size to 1.3 */
+  border: 2.5px solid #fff; /* gives the button a border of 2.5 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.comm_search:hover {
+  padding: 16px 30px; /* gives padding to the top and bottom, leaves both sides at 0 */
+  cursor: pointer; /* makes sure the cursor is on pointer for the button */
+  background: #fff; /* gives a transparent background to the button */
+  color: #000; /* sets the text color on the button to black */
+  font-weight: bold; /* gives the font some boldness */
+  font-size: 0.9em; /* sets the font-size to 1.3 */
+  border: 2.5px solid #fff; /* gives the button a border of 2.5 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+
+
+/* ========== MEDIA QUERIES FOR SMALL SCREENS ========== */
+
+.hero-bg {
+    background-image:url('../img/hero/Sign Up Page image.png'); /* sets a background image to the hero */
+    background-position: center; /* ensures that the background image is centered */
+    background-size: cover; /* ensures that the background image is contained in the hero */
+    padding: 50px 10px; /* sets padding of 50 to the top and bottom, 10 to both sides */
+}
+
+.hero-bg h3, .hero-bg p {
+    color: #fff; /* sets a color of white to both the heading tag and paragraph */
+    letter-spacing: 1px; /* sets the letter-spacing to 1px */
+}
+
+.content {
+    height: auto; /* ensures that the height is fluid */
+    width: 100%; /* ensures that the width is edge to edge */
+    padding: 30px 10px; /* adds padding of 30 to the top and bottom, 10 to both sides */
+}
+
+.content h4 {
+    color: white; /* sets color of heading to white */
+}
+
+
+/* ========== MEDIA QUERIES FOR BIG SCREENS ========== */
+
+@media(min-width:768px) {
+    
+    .hero-bg {
+        background-image: url('../img/hero/Sign Up Page image.png'); /* sets a background image to the hero */
+        background-position: center; /* centers the background image */
+        background-size: cover; /* ensures that the background image is contained in the hero */
+        padding: 100px 10px; /* adds a padding of 100 to the top and bottom, 10 to both sides */
+    }
+    
+    .hero-bg h3 {
+    	color: white; /* sets color of heading to white */
+        font-size: 2.5em; /* sets font size to 2.5 */
+        letter-spacing: 1.3; /* sets the letterspacing to 1.3 */
+    }
+    
+    .hero-bg p {
+        font-size: 1.1em; /* sets the font size to 1.1 */
+    }
+       
+    .content {
+        height: auto; /* ensures the height is fluid */
+        width: 100%; /*  */
+        padding: 30px 10px; /* adds padding of 30 to the top and bottom, 10 to both sides */
+    }
+    
+    .content h4 {
+        color: white; /* set the font color to white */
+        letter-spacing: 1.3px; /* sets letter spacking to 1.3 */
+    }
+
+    .border {
+        border: 2px solid #000;
+    }
+
+    .affix {
+        top: 20px;
+    }
+
+    .nav-search {
+        background: #000000;
+        padding: 15px;
+        min-height: 80px;
+    }
+
+    .nav-search .form-group {
+        margin-bottom: 0;
+    }
+
+    .nav-search #comm-search {
+        height: 45px;
+        line-height: 45px;
+        border-radius: 4px;
+        border: 1px solid white;
+    }
+
+    .nav-search #comm-search:focus {
+        height: 45px;
+        line-height: 45px;
+        border-radius: 4px;
+        border: 1px solid red;
+    }
+
+    .post {
+        margin-bottom: 20px;
+        box-shadow: 0 1px 2px #c9cccd; 
+        background: #ffffff;
+        border-radius: 2px;
+    }
+
+    .post-left {
+        width: 85%;
+    }
+
+    .userinfo {
+        width: 15%;
+        padding: 20px 0 15px 15px;
+    }
+
+    .avatar {
+        width: 35px;
+        margin-left: 5px;
+        position: relative;
+    }
+
+    .username {
+        width: 48px;
+        border-top: 1px solid #f1f1f1;
+        margin-top: 12px;
+        padding-top: 7px;
+        font-size: 12px;
+    }
+
+    .posttext {
+        width: 85%;
+        padding-right: 30px;
+        padding-top: 20px;
+        padding-bottom: 15px;
+        color: #989c9e;
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    .postinfo {
+        width: 15%;
+        border-left: 1px solid #f1f1f1;
+    }
+
+    .comments {
+        border-bottom: 1px solid #f1f1f1;
+        padding: 18px 0 25px 0;
+        text-align: center;
+    }
+    
+    .views {
+        border-bottom: 1px solid #f1f1f1;
+        color: #9da6aa;
+        font-size: 12px;
+        text-align: center;
+        line-height: 29px;
+    }
+
+    .time {
+        color: #9da6aa;
+        font-size: 12px;
+        text-align: center;
+        line-height: 29px;
+    }
+}

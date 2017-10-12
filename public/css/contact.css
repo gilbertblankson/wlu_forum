@@ -1,0 +1,140 @@
+/* ========== OTHER CSS STYLES TO LOAD ========== */
+@import url('main.css'); /* Loads the main.css styles for the website */
+
+body {
+	background:#000000; /* sets background color to black */
+}
+
+/* ========== CSS STYLES FOR THE NEWSLETTER FORM ========== */
+
+input, textarea {
+  font-family: 'Varela Round', sans-serif; /* Global font family set to Valera Round */
+  font-size: 18px; /* Set font size to 18 */
+  font-size: 0.7em;
+  color: black; /* Sets font color to black */
+}
+
+input::-ms-clear, textarea::-ms-clear {
+  display: none;
+}
+
+.contact input {
+  border-radius: 0.2em; /* Adds a rounded border corner of .2 to the input */
+  height: 60px; /* Sets the height of the input to 60 */
+}
+
+.contact .form-control {
+  border: 1px solid #828282; /* Sets a border of 1 with grey color */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.contact .form-control:focus {
+  border: 1px solid #ff5656; /* Sets a border of 1 with red color */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.contact button {
+  padding: 16px 0; /* Sets a padding of 16 to the top and bottom of the button */
+  cursor: pointer; /* Ensures that the cursor is constantly a pointer */
+  background: transparent; /* Sets a transparent background on the button */
+  color: #fff; /* Sets text color to white */
+  font-weight: bold; /* Sets the weight of the font to be bold */
+  font-size: 1.3em; /* Sets the font-size to 1.3 */
+  border: 2.5px solid #fff; /* Sets a border of 2.5 with color white */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.contact button:hover {
+  padding: 16px 0; /* Sets a padding of 16 to the top and bottom of the button */
+  cursor: pointer; /* Ensures that the cursor is constantly a pointer */
+  background: #fff; /* Sets a white background to the button */
+  color: #000; /* Sets text color to black */
+  font-weight: bold; /* Set the weight of the font to be bold */
+  font-size: 1.3em; /* Sets the font-size to 1.3 */
+  border: 2.5px solid #fff; /* Sets a border of 2.5 with color white */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+
+/* ========== MEDIA QUERIES FOR SMALL SCREENS ========== */
+
+.hero-bg {
+    background-image:url('../img/hero/Contact Page Image.png'); /* sets an image to the background of the hero */
+    background-position: center; /* Centers the background image */
+    background-size: cover; /* */
+    padding: 50px 10px; /* Adds padding of 50 to the top and bottom, 10 to both sides */
+}
+
+.hero-bg h2 {
+    color: #fff; /* sets color of white to the heading */
+    letter-spacing: 1.3; /* Gives 1.3 in letterspacing */
+}
+
+.content {
+    height: auto; /* Ensures that the height is fluid */
+    width: 100%; /* ensures width is edge to edge of the screen */
+    padding: 30px 10px; /* Adds padding of 30 to the top and bottom, 10 to the sides */
+}
+
+.content ul {
+	padding: 50px 10px 20px;  /* Adds padding of 50 th the top, 10 to both left and right, 20 to the bottom of the list */
+}
+    
+.content ul li {
+    padding: 12px 5px; /* Adds padding of 12 to the top and bottom, 5 to both sides of the list items */
+    color: #fff; /* adds white color to the list items */
+
+}
+
+
+
+/* ========== MEDIA QUERIES FOR BIG SCREENS ========== */
+
+@media(min-width:768px) {
+    
+    .hero-bg {
+        background-image: url('../img/hero/Contact Page Image.png'); /* Adds a background image to the hero */
+        background-position: center; /* Centers the background image */
+        background-size: cover; /* Ensures that the image is contained in the hero */
+        padding: 100px 10px; /* Adds padding of 100 to the top and bottom, 10 to both sides */
+    }
+    
+    .hero-bg h2 {
+        color: #fff; /* Gives a color of white to the heading */
+        letter-spacing: 1.3; /* Sets a letterspacing of 1.3 for the wording */
+        font-size: 2.8em; /* sets the font size of the heading to 2.8  */
+    }
+       
+    .content {
+        height: auto; /* Ensures that the height of the content is fluid */
+        width: 100%; /* Ensures the width is edge to edge of the screen */
+        padding: 50px 10px 10px; /* Adds padding of 50 to the top, 10 to both the left and right, 10 to the bottom */
+    }
+    
+    .content ul {
+		padding: 30px 10px 70px; /* Adds padding of 30 to the top, 10 to both sides and 70 to the bottom of the list */
+	}
+    
+    .content ul li {
+        padding: 12px 5px; /* Adds padding of 12 to the top and bottom, 5 to both sides of the list items */
+        color: #fff; /* Gives the list items a color of white */
+        
+    }
+    
+}

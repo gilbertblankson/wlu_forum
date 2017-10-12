@@ -1,0 +1,162 @@
+/* ========== OTHER CSS STYLES TO LOAD ========== */
+@import url('main.css'); /* Loads the main.css styles for the website */
+
+body {
+	background:#000000; /* sets background color to black */
+}
+
+/* ========== CSS STYLES FOR THE NEWSLETTER FORM ========== */
+
+input, textarea {
+  font-family: 'Varela Round', sans-serif; /* Sets Global font to Varela Round */
+  font-size: 18px; /* Sets the font size to 18 */
+  font-size: 0.7em;
+  color: black; /* Sets the color of the text to black */
+}
+
+input::-ms-clear, textarea::-ms-clear {
+  display: none; /* */
+}
+
+.login {
+  padding: 2em; /* Adds a padding of 2em to the login */
+  border-radius: 0.5em; /* Sets the border radius of .5 */
+}
+
+.login input {
+  border-radius: 0.2em; /* Sets the border radius of .2 */
+  height: 60px; /* Sets the height to 60 */
+}
+
+.login .form-control {
+  border: 1px solid #828282; /* Sets a border of 1 with grey color */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.login .form-control:focus {
+  border: 1px solid #ff5656; /* Sets a border of 1 with Pinkish color */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.login input[type=checkbox] {
+  color: white; /* Sets input[checkbox] text to white */
+  height: 0px; /* Sets the height to 0 */
+}
+
+.login .pull-right {
+  padding-top: 10px; /* Adds a padding of 10 to the top */
+}
+
+.login button {
+  padding: 16px 0; /* Adds a padding of 16 to the top and bottom, 0 to both sides */
+  cursor: pointer; /* Ensures that the pointer is always a pointer */
+  background: transparent; /* Sets the background to transparent */
+  color: #000; /* Sets the text color to black */
+  font-weight: bold; /* Gives the font weight */
+  font-size: 1.3em; /* Sets the font size to 1.3em */
+  border: 2.5px solid #000; /* Gives a border of 2.5 of color black */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.login button:hover {
+  padding: 16px 0; /* Adds a padding of 16 to the top and bottom, 0 to the sides */
+  cursor: pointer; /* Ensures that the curser is always a pointer */
+  background: #000; /* Sets the background to color black */
+  color: #fff; /* Sets the text color to white */
+  font-weight: bold; /* Gives the font some boldness */
+  font-size: 1.3em; /* Sets the font size to 1.3em */
+  border: 2.5px solid #000; /* Gives a border of 2.5 of color black */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.login .link {
+  color: black; /* Sets the text color to black */
+}
+    
+.login .link:hover {
+  text-decoration: underline; /* Gives the text an underlining effect */
+}
+
+
+/* ========== MEDIA QUERIES FOR SMALL SCREENS ========== */
+
+.hero-bg {
+    background-image:url('../img/hero/Login Page.jpg'); /* Adds a background iamge to the hero section */
+    background-position: center; /* Positions the background image in the center */
+    background-size: cover; /* Sets the background image to cover the hero section */
+    padding: 50px 10px; /* Adds padding of 50 to top and bottom, 10 to the sides */
+}
+
+.hero-bg h2 {
+    color: #fff; /* Sets the heading text color to white */
+    letter-spacing: 1.3; /* Sets the letterspacing is 1.3 */
+}
+
+.content {
+    height: auto; /* Ensures that the height is fluid */
+    width: 100%; /* Ensures that the width is edge to edge */
+    padding: 30px 10px; /* Adds padding of 30 to the top and bottom, 10 to the sides */
+}
+    
+.content .login {
+    height: auto; /* Ensures that the height is fluid */
+    background-color: #ffffff; /* Sets a background color to white */
+}
+    
+.content h2 {
+	color: white; /* Sets the color of the text to white */
+	padding-bottom: 20px; /* Adds a padding of 20 to the bottom */
+}
+
+
+/* ========== MEDIA QUERIES FOR BIG SCREENS ========== */
+
+@media(min-width:768px) {
+    
+    .hero-bg {
+        background-image: url('../img/hero/Login Page.jpg'); /* Sets a background image to the hero section */
+        background-position: center; /* Ensures that the background image is centered */
+        background-size: cover; /* Ensures that the image is covering the hero section */
+        padding: 100px 10px; /* Adds a padding of 100 to the top and bottom, 10 to both sides */
+    }
+    
+    .hero-bg h2 {
+        color: #fff; /* Sets a color of white to the heading */
+        letter-spacing: 1.3; /* Sets the letterspacing to 1.3 */
+        font-size: 2.8em; /* Sets the font size to 2.8 */
+    }
+       
+    .content {
+        height: auto; /* Ensures that the height is fluid */
+        width: 100%; /* Ensures that the width is edge to edge of the screen */
+        padding: 30px 10px; /* Adds a padding of 30 to the top and bottom, 10 to the sides */
+    }
+    
+    .content .login {
+        height: auto; /* Ensures that the height is fluid */
+        background-color: #ffffff; /* Sets the background color is white */
+    }
+    
+    .content h2 {
+		color: white; /* Sets the font color to white for the heading */
+		font-size: 2.8em; /* Sets the font size to 2.8 */
+		padding-bottom: 20px; /* Adds a padding of 20 to the bottom */
+	}
+    
+}

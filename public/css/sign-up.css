@@ -1,0 +1,163 @@
+/* ========== OTHER CSS STYLES TO LOAD ========== */
+@import url('main.css'); /* Loads the main.css styles for the website */
+
+body {
+	background:#000000; /* sets background color to black */
+}
+
+.alert-black {
+	color:#fff;
+	background-color:#000;
+	border-color:#545454;
+}
+
+/* ========== CSS STYLES FOR THE NEWSLETTER FORM ========== */
+
+input, textarea {
+  font-family: 'Varela Round', sans-serif; /* sets the font set for both input and textarea text to Valera Round */
+  font-size: 18px; /* Sets the font-size to 18 */
+  font-size: 0.7em;
+  color: black;  /* Sets the font color to black */
+}
+
+input::-ms-clear, textarea::-ms-clear {
+  display: none; 
+}
+
+.sign-in {
+  padding: 2em; /* Gives padding of 2em to the signin box */
+}
+
+.sign-in input {
+  border-radius: 0.2em;  /* sets the border radius to 0.2 */
+  height: 60px;  /* sets the height of the input box to 60 */
+}
+
+.sign-in .form-control {
+  border: 1px solid #828282; /* sets a border to the sign input/textarea */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.sign-in .form-control:focus {
+  border: 1px solid #ff5656; /* sets a border to the sign input/textarea */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.sign-in button {
+  padding: 16px 0; /* gives padding to the top and bottom, leaves both sides at 0 */
+  cursor: pointer; /* makes sure the cursor is on pointer for the button */
+  background: transparent; /* gives a transparent background to the button */
+  color: #FFF; /* sets the text color on the button to white */
+  font-weight: bold; /* gives the font some boldness */
+  font-size: 1.3em; /* sets the font-size to 1.3 */
+  border: 2.5px solid #fff; /* gives the button a border of 2.5 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.sign-in button:hover {
+  padding: 16px 0; /* gives padding to the top and bottom, leaves both sides at 0 */
+  cursor: pointer; /* makes sure the cursor is on pointer for the button */
+  background: #fff; /* gives a transparent background to the button */
+  color: #000; /* sets the text color on the button to black */
+  font-weight: bold; /* gives the font some boldness */
+  font-size: 1.3em; /* sets the font-size to 1.3 */
+  border: 2.5px solid #fff; /* gives the button a border of 2.5 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.sign-in p {
+	padding: 10px 5px; /* adds some padding of 10 to the top and bottom, 5 to both sides to the paragraph */
+}
+
+.sign-in .link {
+	color:white; /* sets all links in the signin section to color white */
+}
+
+.sign-in .link:hover {
+	text-decoration: underline; /* removes the underlining effect of the hover on the link */
+}
+
+
+/* ========== MEDIA QUERIES FOR SMALL SCREENS ========== */
+
+.hero-bg {
+    background-image:url('../img/hero/Sign Up Page image.png'); /* sets a background image to the hero */
+    background-position: center; /* ensures that the background image is centered */
+    background-size: cover; /* ensures that the background image is contained in the hero */
+    padding: 50px 10px; /* sets padding of 50 to the top and bottom, 10 to both sides */
+}
+
+.hero-bg h3, .hero-bg p {
+    color: #fff; /* sets a color of white to both the heading tag and paragraph */
+    letter-spacing: 1px; /* sets the letter-spacing to 1px */
+}
+
+.content {
+    height: auto; /* ensures that the height is fluid */
+    width: 100%; /* ensures that the width is edge to edge */
+    padding: 30px 10px; /* adds padding of 30 to the top and bottom, 10 to both sides */
+}
+    
+.content .login {
+    height: auto; /* ensures that the height is fluid */
+    border-radius: 5px; /* adds a border radius of 5 to the border */
+    margin-top: 50px; /* adds a margin of 50 to the top */
+}
+
+
+/* ========== MEDIA QUERIES FOR BIG SCREENS ========== */
+
+@media(min-width:768px) {
+    
+    .hero-bg {
+        background-image: url('../img/hero/Sign Up Page image.png'); /* sets a background image to the hero */
+        background-position: center; /* centers the background image */
+        background-size: cover; /* ensures that the background image is contained in the hero */
+        padding: 100px 10px; /* adds a padding of 100 to the top and bottom, 10 to both sides */
+    }
+    
+    .hero-bg h3 {
+    	color: white; /* sets color of heading to white */
+        font-size: 2.5em; /* sets font size to 2.5 */
+        letter-spacing: 1.3; /* sets the letterspacing to 1.3 */
+    }
+    
+    .hero-bg p {
+        font-size: 1.1em; /* sets the font size to 1.1 */
+    }
+       
+    .content {
+        height: auto; /* ensures the height is fluid */
+        width: 100%; /*  */
+        padding: 30px 10px; /* adds padding of 30 to the top and bottom, 10 to both sides */
+    }
+    
+    .content h3, .content p {
+        color: white; /* set the font color to white */
+        letter-spacing: 1.3px; /* sets letter spacking to 1.3 */
+    }
+    
+    .content .login {
+        height: auto; /* ensures that the height is fluid */
+        border-radius: 5px; /* sets a border radius to 5 */
+        background-color: #ffffff; /* sets the background color to white */
+        margin-top: 40px; /* adds a margin of 40 to the top */
+    }
+    
+}
