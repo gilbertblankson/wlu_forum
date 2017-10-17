@@ -50,3 +50,6 @@ Route::post('/search-results',"UserController@searchTopics");
 /*post reactions */
 Route::post('/likepost',"UserController@likePost");
 Route::post('/dislikepost',"UserController@dislikePost");
+
+/*upload image */
+Route::post('/upload-image',"UserController@uploadImage");

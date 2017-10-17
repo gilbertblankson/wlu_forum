@@ -8,6 +8,7 @@ use App\PostReaction;
 use App\PostReactionLog;
 use App\NumberOfView;
 use App\Reply;
+use App\Photo;
 
 use Illuminate\Http\Request;
 
@@ -175,10 +176,39 @@ class UserController extends Controller
             return response()->json($post);
         }else{
             return response()->json();
-        }
-           
+        } 
+    }
 
-      
+    public function uploadImage(Request $request){
+        $this->validate(request(),[
+            'image_file'=>'mimes:jpeg,bmp,png,jpg|image|required',
+            'hash-tag'=>array('required','regex:/^(?=.{2,140}$)(#|\x{ff03}){1}([0-9_\p{L}]*[_\p{L}][0-9_\p{L}]*)$/u'),
+            'post-code'=>'string|required',
+        ]);
+
+        //upload path
+        $current_time = time().rand(2,100);
+
+        $destination = public_path()."\uploaded_photos";
+        $extension = $request->file('image_file')->getClientOriginalExtension();
+        $tempName = $request->file('image_file')->getClientOriginalName();
+
+        $final_file = $current_time.".".$extension;
+        $request->file('image_file')->move($destination,$final_file);
+
+        /*get hashatag */
+        $hashtag = request('hash-tag');
+        $postcode = request('post-code');
+        $final_tag= $hashtag.$postcode;
+
+        Photo::create([
+            'user_id'=>auth()->id(),
+            'hashtag'=>$final_tag,
+            'file_name'=>$final_file,
+        ]);
+
+        
+        return response()->json();
     }
 
 }

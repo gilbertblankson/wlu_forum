@@ -114,24 +114,24 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <form enctype="multipart/form-data" id="image-upload-form">
+                        <form method="post" enctype="multipart/form-data" id="image-upload-form">
                         {{csrf_field()}}
                             <div class="form-group col-md-12">
                                 <label for="exampleInputFile">File input</label>
-                                <input type="file" name="input-file" id="exampleInputFile">
+                                <input type="file" name="image_file" class="image_file" id="exampleInputFile">
                                 <p class="help-block">Image relating to the Postcode.</p>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="exampleInputFile">#HashTag</label>
-                                <input type="text" name="hash-tag" id="exampleInputFile" class="form-control" placeholder="#hashtag">
+                                <input type="text" name="hash-tag" id="exampleInputFile" class="form-control hash-tag" placeholder="#hashtag">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="exampleInputFile">Postcode</label>
-                                <input type="text" name="post-code" id="exampleInputFile" class="form-control" placeholder="Postcode">
+                                <input type="text" name="post-code" id="exampleInputFile" class="form-control post-code" placeholder="Postcode">
                             </div>
                             <div class="form-group col-md-6 col-md-offset-6 pull-right">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn upload_button">Upload</button>
+                                <button type="submit" class="btn upload_button">Upload</button>
                             </div>
                         </form>
                     </div>
