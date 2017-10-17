@@ -1,8 +1,13 @@
 /* ========== OTHER CSS STYLES TO LOAD ========== */
-@import url('main.css'); /* Loads the main.css styles for the website */
-
+@import url('main.css'); 
 
 /* ========== MEDIA QUERIES FOR SMALL SCREENS ========== */
+
+.content {
+	height: auto;
+	width: 100%;
+	padding: 130px 10px 10px;
+}
 
 
 
@@ -10,5 +15,17 @@
 /* ========== MEDIA QUERIES FOR BIG SCREENS ========== */
 
 @media(min-width:768px) {
+	.content {
+        height: auto; /* Ensures that the height is fluid */
+        width: 100%; /* Ensures that the width is edge to edge */
+        padding: 50px 10px 10px; /* Adds padding of 50 to the top, 10 to the sides and 10 to the bottom */
+        margin-top: 150px;
+	}
 
+	.content h2 {
+        color: #fff; /* adds a color of white to the text */
+        background: rgba(0,0,0,0.6);
+        border-radius: 8px;
+        padding: 25px;
+    }
 }

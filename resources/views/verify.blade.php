@@ -37,12 +37,11 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                     	<li class="active hidden"><a href="index.html">HOME</a></li>
-                        <li><a href="about.html">ABOUT</a></li>
-                        <li><a href="team.html">TEAM</a></li>
-                        <li><a href="survey.php">SURVEY</a></li>
-                        <li><a href="contact.php">CONTACT</a></li>
-                        <li><a href="login.php">LOGIN</a></li> 
-                        <li><a href="sign-up.php">SIGNUP</a></li> 
+                        <li><a href="/about">ABOUT</a></li>
+                        <li><a href="/team">TEAM</a></li>
+                        <li><a href="/survey">SURVEY</a></li>
+                        <li><a href="/contact">CONTACT</a></li>
+                        <li><a href="/login">LOGIN</a></li> 
                         <!-- <li><a href="search.html">SEARCH &nbsp;<i class="fa fa-search"></i></a></li> -->
                     </ul>
                 </div><!-- /.navbar-collapse -->

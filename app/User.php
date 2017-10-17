@@ -2,6 +2,11 @@
 
 namespace App;
 
+use App\Post;
+use App\FollowedPost;
+use App\Reply;
+use App\PostReactionLog;
+
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -28,4 +33,20 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function posts(){
+        return $this->hasMany('App\Post','user_id');
+    }
+
+    public function followedPosts(){
+        return $this->hasMany('App\FollowedPost','user_id');
+    }
+
+    public function replies(){
+        return $this->hasMany('App\Reply','user_id');
+    }
+
+    public function postReactionsLog(){
+        return $this->hasOne('App\PostReactionLog','user_id');
+    }
 }

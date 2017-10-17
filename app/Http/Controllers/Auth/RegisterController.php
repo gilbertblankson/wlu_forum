@@ -102,7 +102,8 @@ class RegisterController extends Controller
         $new_user = $this->create($request->all()); //register user
 
         
-        \Mail::to($new_user->email)->send(new ActivateAccount($new_user));      
+       \Mail::to($new_user->email)->send(new ActivateAccount($new_user));
+             
 
         session()->flash('message','Successfully registered. An account activation link has been sent to your email.');
 

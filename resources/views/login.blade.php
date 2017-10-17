@@ -25,8 +25,23 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
     			 		<h2 class="">Welcome</h2>
-
                         <br />
+						@if(count($errors)>0)
+						<div class="alert alert-danger">
+							<ul>
+							    @foreach($errors->all() as $error)
+									<li>
+									    {{$error}}
+									</li>	
+								@endforeach
+							</ul>
+						</div>
+						@endif
+						@if($flash=session('message'))
+						<div class="alert alert-danger">
+							<strong>Oops!</strong> Illegal login attempt
+						</div>
+						@endif
                     </div>
                 </div>
             </div>

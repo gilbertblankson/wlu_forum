@@ -143,29 +143,29 @@ footer .list-social li a {
     color:#fff; /* marks all the links with color white */
 }
     
-    footer .social-twitter a {
-        background-color:#1da1f2 /* gives a background color of twitter blue to the twitter link */
-    }
-    
-    footer .social-twitter a:hover {
-        background-color:#0d95e8 /* gives a different color of blue to the twitter link on hover */
-    }
-    
-    footer .social-email a{
-        background-color:#3b5998 /* gives a background of facebook blue to the facebook link  */
-    }
-    
-    footer .social-email a:hover {
-        background-color:#344e86 /* gives a different color of blue to the facebook link on hover */
-    }
-    
-    footer .social-linkedin a {
-        background-color:#007bb5 /* gives a background color of linkedin blue to the linkedin link */
-    }
-    
-    footer .social-linkedin a:hover {
-        background-color:#125688 /* gives a different color of blue to the linkedin link */
-    }
+footer .social-twitter a {
+    background-color:#1da1f2 /* gives a background color of twitter blue to the twitter link */
+}
+
+footer .social-twitter a:hover {
+    background-color:#0d95e8 /* gives a different color of blue to the twitter link on hover */
+}
+
+footer .social-email a{
+    background-color:#3b5998 /* gives a background of facebook blue to the facebook link  */
+}
+
+footer .social-email a:hover {
+    background-color:#344e86 /* gives a different color of blue to the facebook link on hover */
+}
+
+footer .social-linkedin a {
+    background-color:#007bb5 /* gives a background color of linkedin blue to the linkedin link */
+}
+
+footer .social-linkedin a:hover {
+    background-color:#125688 /* gives a different color of blue to the linkedin link */
+}
 
 
 

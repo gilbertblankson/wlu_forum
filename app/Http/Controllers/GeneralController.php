@@ -35,7 +35,4 @@ class GeneralController extends Controller
         return view('sign-up');
     }
 
-    public function showLoginPage(){
-        return view('login');
-    }
 }

@@ -18,7 +18,7 @@ Route::get('/about',"GeneralController@showAboutPage");
 Route::get('/team',"GeneralController@showTeamPage");
 Route::get('/contact',"GeneralController@showContactPage");
 Route::get('/sign-up',"GeneralController@showSignupPage");
-Route::get('login',"GeneralController@showLoginPage");
+Route::get('/login',"Auth\LoginController@showLoginPage");
 
 /*Register a new user*/
 Route::post('/register-new-user',"Auth\RegisterController@register");
@@ -27,5 +27,22 @@ Route::post('/register-new-user',"Auth\RegisterController@register");
 Route::get('/walulel/account/activation/{value}',"ActivateAccountController@activateAccount");
 Route::get('/verify',"ActivateAccountController@showVerifyPage");
 
-/*Login a new user */
-Route::post('/login',)
+/*Login a logout a  user */
+Route::post('/login',"Auth\LoginController@login")->name('login');
+Route::get('logout',"Auth\LoginController@logout");
+
+
+/*authenticated user views*/
+Route::get('/preview',"UserController@showPreviewPage");
+Route::get('/community',"UserController@showCommunityPage");
+Route::get('/single-post/{post}/{title}',"UserController@showSinglePost");
+Route::get('/community/{category}/{category_name}',"UserController@sortByCategory");
+
+/*authenticatrred user forum functionality */
+Route::post('/create-post',"UserController@createPost");
+Route::post('/create-reply/{post}/{title}',"UserController@createReply");
+Route::post('/search-results',"UserController@searchTopics");
+
+/*post reactions */
+Route::post('/likepost',"UserController@likePost");
+Route::post('/dislikepost',"UserController@dislikePost");
