@@ -104,9 +104,7 @@
      @include('includes.site-footer')
 
     <!-- Custom Theme JavaScript -->
-    <script>
-       
-    </script>
+    <script type="text/javascript" src="/js/image-upload.js"></script>
 
 
     <!-- Modal for the uploading on a picture to the postcode -->
