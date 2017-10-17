@@ -1,7 +1,7 @@
 @include('includes.page-meta-data')
 
     <title>Welcome | WALULEL</title>
-
+    <meta id="token" name="csrf-token" content="{{csrf_token()}}">
     <!-- Plugin CSS -->
 
     <!-- Custom CSS -->
@@ -103,10 +103,7 @@
     
      @include('includes.site-footer')
 
-    <!-- Custom Theme JavaScript -->
-    <script type="text/javascript" src="/js/image-upload.js"></script>
-
-
+  
     <!-- Modal for the uploading on a picture to the postcode -->
     <div class="modal fade" id="upload" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
@@ -117,19 +114,20 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <form>
+                        <form enctype="multipart/form-data" id="image-upload-form">
+                        {{csrf_field()}}
                             <div class="form-group col-md-12">
                                 <label for="exampleInputFile">File input</label>
-                                <input type="file" id="exampleInputFile">
+                                <input type="file" name="input-file" id="exampleInputFile">
                                 <p class="help-block">Image relating to the Postcode.</p>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="exampleInputFile">#HashTag</label>
-                                <input type="text" id="exampleInputFile" class="form-control" placeholder="#hashtag">
+                                <input type="text" name="hash-tag" id="exampleInputFile" class="form-control" placeholder="#hashtag">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="exampleInputFile">Postcode</label>
-                                <input type="text" id="exampleInputFile" class="form-control" placeholder="Postcode">
+                                <input type="text" name="post-code" id="exampleInputFile" class="form-control" placeholder="Postcode">
                             </div>
                             <div class="form-group col-md-6 col-md-offset-6 pull-right">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -145,6 +143,8 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
+   <!-- Custom Theme JavaScript -->
+    <script type="text/javascript" src="/js/image-upload.js"></script>
 </body>
 
 </html>

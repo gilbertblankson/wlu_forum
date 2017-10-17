@@ -1,42 +1,15 @@
 $(document).ready(function () {
 
-    likePost = function (a, b) {
-        /*
-           a-user id
-           b- post id
-         */
+     $(".upload_button").click(function(e){
+      
+            $.ajaxSetup({
+                headers:{
+                    'X-CSRF-TOKEN':$('meta[name="_token"]').attr('content');
+                }
+            });//end ajax setup
 
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-            }
-        });//end ajax setup
+            e.preventDefault();
 
-        var requestData = {
-            user_id: a,
-            post_id: b,
-        };
-
-        var processing_url = "/likepost";
-
-        $.ajax({
-            url: processing_url,
-            type: 'POST',
-            data: requestData,
-            dataType: 'json',
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader('X-CSRF-TOKEN', $("#token").attr('content'));
-            },
-            success: function (feedback) {
-                location.reload();
-            },
-            error: function (feedback) {
-                alert("error");
-            }
-        });
-
-
-
-    };
-
+     });
+   
 });
