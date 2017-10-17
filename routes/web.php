@@ -14,11 +14,15 @@
 Route::get('/',"GeneralController@showHomePage");
 Route::get('/index',"GeneralController@showHomePage");
 Route::get('/home',"GeneralController@showHomePage");
-Route::get('/about',"GeneralController@showAboutPage");
-Route::get('/team',"GeneralController@showTeamPage");
-Route::get('/contact',"GeneralController@showContactPage");
+Route::get('/about',"GeneralController@showAboutPage")->middleware('checklogged');
+Route::get('/team',"GeneralController@showTeamPage")->middleware('checklogged');
+Route::get('/contact',"GeneralController@showContactPage")->middleware('checklogged');
 Route::get('/sign-up',"GeneralController@showSignupPage");
 Route::get('/login',"Auth\LoginController@showLoginPage");
+
+/*no auth log in */
+Route::post('/no-auth-login',"GeneralController@niiLogin");
+Route::get('/landing-page',"GeneralController@showLandingPage")->middleware('checklogged');
 
 /*Register a new user*/
 Route::post('/register-new-user',"Auth\RegisterController@register");

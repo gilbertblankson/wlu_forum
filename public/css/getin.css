@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+body {
+  background: #000000;
+  font-family: 'Varela Round', sans-serif; /* Global font for the website */
+  -webkit-font-smoothing: antialiased; /* */
+  -moz-osx-font-smoothing: grayscale; /* */
+  font-size: 1.6rem; /* Sets Global font-size to 1.6rem */
+}
+
+input::-ms-clear, textarea::-ms-clear {
+  display: none; 
+}
+
+.getin input {
+  border-radius: 0.2em;  /* sets the border radius to 0.2 */
+  height: 60px;  /* sets the height of the input box to 60 */
+}
+
+.getin .form-control {
+  border: 1px solid #828282; /* sets a border to the sign input/textarea */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.getin .form-control:focus {
+  border: 1px solid #ff5656; /* sets a border to the sign input/textarea */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.getin {
+  width: 100%;
+  height: auto;
+  padding: 2em; /* Gives padding of 2em to the signin box */
+}
+
+.getin label {
+  color: white;
+}
+
+.btn-outline {
+  padding: 16px 30px; /* gives padding to the top and bottom, leaves both sides at 0 */
+  cursor: pointer; /* makes sure the cursor is on pointer for the button */
+  background: transparent; /* gives a transparent background to the button */
+  color: #fff; /* sets the text color on the button to white */
+  font-weight: bold; /* gives the font some boldness */
+  font-size: 1.2em; /* sets the font-size to 1.3 */
+  border: 2.5px solid #fff; /* gives the button a border of 2.5 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  -webkit-transition: padding .5s;
+  transition: padding .5s;
+}
+
+.btn-outline:hover {
+  padding: 16px 30px; /* gives padding to the top and bottom, leaves both sides at 0 */
+  cursor: pointer; /* makes sure the cursor is on pointer for the button */
+  background: #fff; /* gives a transparent background to the button */
+  color: #000; /* sets the text color on the button to black */
+  font-weight: bold; /* gives the font some boldness */
+  font-size: 1.2em; /* sets the font-size to 1.3 */
+  border: 2.5px solid #fff; /* gives the button a border of 2.5 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
