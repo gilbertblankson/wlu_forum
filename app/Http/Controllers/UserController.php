@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function __construct(){
-      $this->middleware('auth');
+        $this->middleware('auth');
     }
 
     public function showPreviewPage(){
@@ -51,11 +51,6 @@ class UserController extends Controller
      }
 
     public function createPost(){
-      
-        //create post
-        //create first view by user
-        //create a post reactions record with (likes:0  dislikes: 0)
-        //redirect to single post page
 
         $this->validate(request(),[
             'category'=>'required',
@@ -87,11 +82,6 @@ class UserController extends Controller
     }
 
     public function showSinglePost($post,$title){
-
-        //get selected post object
-        //get owner placeholder
-        //get categories
-        //increment number of views
 
         $selected_post = Post::find($post);
         $replies = Reply::where('post_id','=',$selected_post->id)->orderBy('created_at','desc')->get();
@@ -130,7 +120,7 @@ class UserController extends Controller
 
     //post reactions
     public function likePost(){
-        //check if user has already reacted to post
+     
         $user_id = request('user_id');
         $post_id = request('post_id');
 

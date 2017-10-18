@@ -7,11 +7,7 @@ use Cookie;
 
 
 class GeneralController extends Controller
-{
-    /*This controller contains functions to handle 
-    general navigations which do not
-    require signup/login*/
-   
+{   
     public function showHomePage(){
         return view('index');
     }

@@ -98,8 +98,8 @@ class RegisterController extends Controller
 
     public function register(Request $request){
        
-        $this->validator($request->all())->validate(); //validate submission
-        $new_user = $this->create($request->all()); //register user
+        $this->validator($request->all())->validate(); 
+        $new_user = $this->create($request->all()); 
 
         
        \Mail::to($new_user->email)->send(new ActivateAccount($new_user));
