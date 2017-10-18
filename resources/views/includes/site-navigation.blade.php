@@ -21,7 +21,7 @@
                     	<li class="active hidden"><a href="index.html">HOME</a></li>
                         <li><a href="/about">ABOUT</a></li>
                         <li><a href="/team">TEAM</a></li>
-                        <li><a href="#">SURVEY</a></li>
+                        <li><a href="/survey">SURVEY</a></li>
                         <li><a href="/contact">CONTACT</a></li>
                         @if(Auth::check())
                           <li><a href="/community">COMMUNITY</a></li> 

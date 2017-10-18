@@ -8,6 +8,7 @@ Route::get('/about',"GeneralController@showAboutPage")->middleware('checklogged'
 Route::get('/team',"GeneralController@showTeamPage")->middleware('checklogged');
 Route::get('/contact',"GeneralController@showContactPage")->middleware('checklogged');
 Route::get('/sign-up',"GeneralController@showSignupPage");
+Route::get('/survey', "GeneralController@showSurveyPage")->middleware('checklogged');
 Route::get('/login',"Auth\LoginController@showLoginPage");
 
 /*no auth log in */

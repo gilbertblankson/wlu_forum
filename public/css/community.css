@@ -368,6 +368,10 @@ input::-ms-clear, textarea::-ms-clear {
         line-height: 25px;
     }
 
+    .posttext a h2 {
+        font-size: 30px;
+    }
+
     .postinfo {
         width: 15%;
         border-left: 1px solid #f1f1f1;

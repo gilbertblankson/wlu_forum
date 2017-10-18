@@ -157,7 +157,7 @@
                     <p style="color:#000">Your locale like you've never known. &copy; Walulel Limited 2017.</p>
                 
                 </div>
-            
+          
             </div>
         
         </div>
