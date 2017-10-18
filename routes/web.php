@@ -4,6 +4,7 @@
 Route::get('/',"GeneralController@showHomePage");
 Route::get('/index',"GeneralController@showHomePage");
 Route::get('/home',"GeneralController@showHomePage");
+Route::get('/password-reset',"GeneralController@showPasswordResetPage");
 Route::get('/about',"GeneralController@showAboutPage")->middleware('checklogged');
 Route::get('/team',"GeneralController@showTeamPage")->middleware('checklogged');
 Route::get('/contact',"GeneralController@showContactPage")->middleware('checklogged');
@@ -25,6 +26,9 @@ Route::get('/verify',"ActivateAccountController@showVerifyPage");
 /*Login a logout a  user */
 Route::post('/login',"Auth\LoginController@login")->name('login');
 Route::get('logout',"Auth\LoginController@logout");
+
+/*password reset */
+Route::post('/password-reset',"GeneralController@resetPassword");
 
 
 /*authenticated user views*/

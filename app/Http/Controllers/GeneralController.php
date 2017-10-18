@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Cookie;
 
@@ -30,6 +31,40 @@ class GeneralController extends Controller
 
     public function showSignupPage(){
         return view('sign-up');
+    }
+
+    public function showPasswordResetPage(){
+        return view('password-reset');
+    }
+
+    public function resetPassword(){
+        $this->validate(request(),[
+            'email'=>'email|required',
+        ]);
+
+        if(User::where('email','=',request('email'))->where('confirmation_status', '=', 'true')->exists()){
+            //generate new password
+            //update password in db
+            //email new password
+            $user = User::where('email','=',request('email'))->first();
+            $new_password = substr($user->firstname,0,2).time();
+            $user->password = bcrypt($new_password);
+
+            $user->save();
+
+            \Mail::send('emails.reset',['password'=>$new_password],function($message){
+                $message->from("info@walulel.com",'Walulel');
+                $message->to(request('email'))->subject('Walulel Password Reset');
+            });
+
+            session()->flash('success', 'good');
+            return redirect('/password-reset');
+
+        }
+
+        session()->flash('message','illegal');
+        return redirect('/password-reset');
+
     }
 
     public function niiLogin(){
