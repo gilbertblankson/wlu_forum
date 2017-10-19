@@ -65,7 +65,7 @@ class UserController extends Controller
             'category_id'=>request('category'),
             'post_title'=>request('post_title'),
             'post_body'=>request('post_body'),
-            'moderated'=>'true',
+            'moderated'=>'1',
             'created_at'=>$current_time,
             'updated_at'=>$current_time,
             'last_edited_at'=>$current_time,
@@ -104,7 +104,7 @@ class UserController extends Controller
         ]);
 
         $categories = Category::withCount('posts')->orderBy('category_alias','asc')->get();
-        $posts = Post::where('post_title','ILIKE','%'.request('comm-search').'%')->orWhere('post_body','ILIKE','%'.request('comm-search').'%')->paginate(100);
+        $posts = Post::where('post_title','LIKE','%'.request('comm-search').'%')->orWhere('post_body','LIKE','%'.request('comm-search').'%')->paginate(100);
         
         return view('search-results',compact('categories','posts'));
     }

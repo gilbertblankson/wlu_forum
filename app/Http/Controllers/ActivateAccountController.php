@@ -9,7 +9,7 @@ class ActivateAccountController extends Controller
 {
     public function activateAccount($value){
         $user = User::where('confirmation_code','=',$value)->first();
-        $user->confirmation_status = "true";
+        $user->confirmation_status = "1";
         $user->save();
         
          return redirect('/verify');

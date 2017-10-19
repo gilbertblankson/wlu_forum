@@ -42,7 +42,7 @@ class GeneralController extends Controller
             'email'=>'email|required',
         ]);
 
-        if(User::where('email','=',request('email'))->where('confirmation_status', '=', 'true')->exists()){
+        if(User::where('email','=',request('email'))->where('confirmation_status', '=', '1')->exists()){
             //generate new password
             //update password in db
             //email new password

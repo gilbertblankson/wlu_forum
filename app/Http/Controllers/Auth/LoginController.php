@@ -39,7 +39,7 @@ class LoginController extends Controller
             'password'=>'required',
         ]);
 
-        if(auth()->attempt(['email'=>request('email'),'password'=>request('password'),'confirmation_status'=>'true'])){
+        if(auth()->attempt(['email'=>request('email'),'password'=>request('password'),'confirmation_status'=>'1'])){
             return redirect($this->redirectTo);
         }
 
