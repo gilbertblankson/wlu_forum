@@ -48,3 +48,6 @@ Route::post('/dislikepost',"UserController@dislikePost");
 
 /*upload image */
 Route::post('/upload-image',"UserController@uploadImage");
+
+/*search image */
+Route::post('/search-image', "UserController@searchImage");

@@ -11,6 +11,16 @@ body {
 	border-color:#545454;
 }
 
+#postcode .item{
+  margin: 3px;
+}
+
+#postcode .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* ========== CSS STYLES FOR THE NEWSLETTER FORM ========== */
 
 input, textarea {
@@ -24,16 +34,12 @@ input::-ms-clear, textarea::-ms-clear {
   display: none; 
 }
 
-.sign-in {
-  padding: 2em; /* Gives padding of 2em to the signin box */
-}
-
-.sign-in input {
+.upload input[type="text"], .browse input[type="text"] {
   border-radius: 0.2em;  /* sets the border radius to 0.2 */
   height: 60px;  /* sets the height of the input box to 60 */
 }
 
-.sign-in .form-control {
+.upload .form-control, .browse .form-control {
   border: 1px solid #828282; /* sets a border to the sign input/textarea */
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -42,7 +48,7 @@ input::-ms-clear, textarea::-ms-clear {
   appearance: none;
 }
 
-.sign-in .form-control:focus {
+.upload .form-control:focus, .browse .form-control:focus {
   border: 1px solid #ff5656; /* sets a border to the sign input/textarea */
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -52,11 +58,26 @@ input::-ms-clear, textarea::-ms-clear {
 }
 
 .upload_button {
-  padding: 5px 8px; /* gives padding to the top and bottom, leaves both sides at 0 */
+  padding: 10px 30px; /* gives padding to the top and bottom, leaves both sides at 0 */
   cursor: pointer; /* makes sure the cursor is on pointer for the button */
   background: transparent; /* gives a transparent background to the button */
   color: #000; /* sets the text color on the button to white */
-  font-weight: bold; /* gives the font some boldness */
+  font-size: 0.9em; /* sets the font-size to 1.3 */
+  border: 2.5px solid #000; /* gives the button a border of 2.5 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  -webkit-transition: padding .5s;
+  transition: padding .5s;
+}
+
+.upload_button:hover {
+  padding: 10px 50px; /* gives padding to the top and bottom, leaves both sides at 0 */
+  cursor: pointer; /* makes sure the cursor is on pointer for the button */
+  background: #000; /* gives a transparent background to the button */
+  color: #fff; /* sets the text color on the button to black */
   font-size: 0.9em; /* sets the font-size to 1.3 */
   border: 2.5px solid #000; /* gives the button a border of 2.5 */
   -webkit-appearance: none;
@@ -66,12 +87,11 @@ input::-ms-clear, textarea::-ms-clear {
   appearance: none;
 }
 
-.upload_button:hover {
-  padding: 5px 8px; /* gives padding to the top and bottom, leaves both sides at 0 */
+.btn-outline {
+  padding: 18px 30px; /* gives padding to the top and bottom, leaves both sides at 0 */
   cursor: pointer; /* makes sure the cursor is on pointer for the button */
-  background: #000; /* gives a transparent background to the button */
-  color: #fff; /* sets the text color on the button to black */
-  font-weight: bold; /* gives the font some boldness */
+  background: transparent; /* gives a transparent background to the button */
+  color: #000; /* sets the text color on the button to white */
   font-size: 0.9em; /* sets the font-size to 1.3 */
   border: 2.5px solid #000; /* gives the button a border of 2.5 */
   -webkit-appearance: none;
@@ -79,6 +99,27 @@ input::-ms-clear, textarea::-ms-clear {
   -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
+  -webkit-transition: padding .5s;
+  transition: padding .5s;
+}
+
+.btn-outline:hover {
+  padding: 18px 40px; /* gives padding to the top and bottom, leaves both sides at 0 */
+  cursor: pointer; /* makes sure the cursor is on pointer for the button */
+  background: #000; /* gives a transparent background to the button */
+  color: #fff; /* sets the text color on the button to black */
+  font-size: 0.9em; /* sets the font-size to 1.3 */
+  border: 2.5px solid #000; /* gives the button a border of 2.5 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.showcase {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .modal-header {

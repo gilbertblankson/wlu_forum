@@ -201,4 +201,14 @@ class UserController extends Controller
         return response()->json();
     }
 
+    public function searchImage(Request $request){
+        $this->validate(request(), [
+            'search_keyword' => 'string|required',
+        ]);
+
+       $photos = Photo::where('hashtag', 'LIKE', '%' . request('search_keyword') . '%')->get(); 
+
+       return response()->json($photos);
+    }
+
 }

@@ -3,6 +3,10 @@
     <title>Welcome | WALULEL</title>
     <meta id="token" name="csrf-token" content="{{csrf_token()}}">
     <!-- Plugin CSS -->
+    <link rel="stylesheet" href="/css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="/css/owl.theme.css" type="text/css">
+    <link rel="stylesheet" href="/css/owl.transitions.css" type="text/css">
+    <link rel="stylesheet" href="/css/ekko-lightbox.css" type="text/css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/preview.css" type="text/css">
@@ -112,28 +116,58 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Upload a photo</h4>
                 </div>
-                <div class="modal-body">
+                  <div class="modal-body">
                     <div class="row">
-                        <form method="post" enctype="multipart/form-data" id="image-upload-form">
-                        {{csrf_field()}}
-                            <div class="form-group col-md-12">
-                                <label for="exampleInputFile">File input</label>
-                                <input type="file" name="image_file" class="image_file" id="exampleInputFile">
-                                <p class="help-block">Image relating to the Postcode.</p>
+                        <div role="tabpanel">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#uploadTab" aria-controls="uploadTab" role="tab" data-toggle="tab">Upload</a>
+
+                                </li>
+                                <li role="presentation"><a href="#browseTab" aria-controls="browseTab" role="tab" data-toggle="tab">Browse</a>
+
+                                </li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="uploadTab" style="min-height: 300px; padding-top: 10px; padding-bottom: 10px;">
+                                    <form method="post" enctype="multipart/form-data" id="image-upload-form" class="upload">
+                                        {{csrf_field()}}
+                                        <div class="form-group col-md-12">
+                                            <label for="exampleInputFile">File input</label>
+                                            <input type="file" name="image_file" class="image_file" id="exampleInputFile">
+                                            <p class="help-block">Image relating to the Postcode.</p>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="exampleInputFile">Tell us what this picture is</label>
+                                            <input type="text" name="hash-tag" id="exampleInputFile" class="hash-tag form-control" placeholder="#hashtag">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="exampleInputFile">Tell us where this photo is</label>
+                                            <input type="text" name="post-code" id="exampleInputFile" class="form-control" placeholder="postcode 'BR1', 'BR2'">
+                                        </div>
+                                        <div class="form-group col-md-6 col-md-offset-6 pull-right">
+                                            <button type="button" class="btn upload_button">Upload</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="browseTab" style="min-height: 300px; padding-top: 10px; padding-bottom: 10px;">
+                                    <form method="post" id="search_image_form" class="browse">
+                                    {{csrf_field()}}
+                                        <div class="form-group col-sm-9">
+                                            <input type="text" name="search_keyword" id="exampleInputFile" class="form-control search-keyword" placeholder="enter postcode 'BR1', 'BR2'">
+                                        </div>
+                                        <button type="submit" class="btn btn-outline search-image-button">SEARCH</button>
+                                    </form>
+                                    
+                                    <div class="showcase">
+                                        <div id="postcode">
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="exampleInputFile">#HashTag</label>
-                                <input type="text" name="hash-tag" id="exampleInputFile" class="form-control hash-tag" placeholder="#hashtag">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="exampleInputFile">Postcode</label>
-                                <input type="text" name="post-code" id="exampleInputFile" class="form-control post-code" placeholder="Postcode">
-                            </div>
-                            <div class="form-group col-md-6 col-md-offset-6 pull-right">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn upload_button">Upload</button>
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
                 <!-- <div class="modal-footer">
@@ -145,6 +179,25 @@
 
    <!-- Custom Theme JavaScript -->
     <script type="text/javascript" src="/js/image-upload.js"></script>
+    <script type="text/javascript" src="/js/search-image.js"></script>
+      <!-- Custom Theme JavaScript -->
+    <script src="/js/owl.carousel.js"></script>
+    <script src="/js/ekko-lightbox.js"></script>
+        <script>
+       $(document).ready(function() {
+          $("#postcode").owlCarousel({
+              autoPlay: 3000, //Set AutoPlay to 3 seconds
+              items : 3,
+              itemsDesktop : [1199,3],
+              itemsDesktopSmall : [979,3]
+          });
+        });
+        
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
 </body>
 
 </html>
