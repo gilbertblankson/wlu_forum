@@ -8,5 +8,5 @@ class Photo extends Model
 {
     public $timestamps = false;
 
-    protected $fillable = ['user_id','hashtag','file_name'];
+    protected $fillable = ['user_id','hashtag','file_name','uploaded_at'];
 }

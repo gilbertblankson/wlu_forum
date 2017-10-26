@@ -21,7 +21,7 @@
                         <li><a href="/survey">SURVEY</a></li>
                         <li><a href="/contact">CONTACT</a></li>
                         <li><a href="/community">COMMUNITY</a></li>
-                        <li><a href="search-vor-1.php">SEARCH &nbsp;<i class="fa fa-search"></i></a></li>
+                        <li><a href="/search-vor-1">SEARCH &nbsp;<i class="fa fa-search"></i></a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{strtoupper(Auth::user()->firstname)}}&nbsp; <span class="caret"></span></a>
                             <ul class="dropdown-menu">

@@ -191,10 +191,14 @@ class UserController extends Controller
         $postcode = request('post-code');
         $final_tag= $hashtag.$postcode;
 
+        /*current time sql timestamp */
+        $current_timestamp = \Carbon\Carbon::now()->format('Y-m-d H:i:s');
+
         Photo::create([
             'user_id'=>auth()->id(),
             'hashtag'=>$final_tag,
             'file_name'=>$final_file,
+            'uploaded_at'=>$current_timestamp,
         ]);
 
         
