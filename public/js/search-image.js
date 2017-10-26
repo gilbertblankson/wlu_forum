@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     $(".search-image-button").click(function (e) {
-
+        
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')

@@ -210,9 +210,14 @@ class UserController extends Controller
             'search_keyword' => 'string|required',
         ]);
 
-       $photos = Photo::where('hashtag', 'LIKE', '%' . request('search_keyword') . '%')->get(); 
+       $postcode_gallery = request('search_keyword');  
+       $photos = Photo::where('hashtag', 'LIKE', '%' . request('search_keyword') . '%')->orderBy('uploaded_at','desc')->get(); 
 
-       return response()->json($photos);
+       return view('photo-search',compact('photos','postcode_gallery'));
+    }
+
+    public function showPhotoSearch(){
+        return view('photo-search');
     }
 
 }

@@ -3,9 +3,6 @@
     <title>Welcome | WALULEL</title>
     <meta id="token" name="csrf-token" content="{{csrf_token()}}">
     <!-- Plugin CSS -->
-    <link rel="stylesheet" href="/css/owl.carousel.css" type="text/css">
-    <link rel="stylesheet" href="/css/owl.theme.css" type="text/css">
-    <link rel="stylesheet" href="/css/owl.transitions.css" type="text/css">
     <link rel="stylesheet" href="/css/ekko-lightbox.css" type="text/css">
 
     <!-- Custom CSS -->
@@ -153,12 +150,12 @@
                                     </form>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="browseTab" style="min-height: 300px; padding-top: 10px; padding-bottom: 10px;">
-                                    <form method="post" id="search_image_form" class="browse">
+                                    <form method="post" action="/search-image" id="search_image_form" class="browse">
                                     {{csrf_field()}}
                                         <div class="form-group col-sm-9">
-                                            <input type="text" name="search_keyword" id="exampleInputFile" class="form-control search-keyword" placeholder="enter postcode 'BR1', 'BR2'">
+                                            <input type="text" name="search_keyword" id="exampleInputFile" class="form-control search-keyword" placeholder="enter postcode 'BR1', 'BR2' or hashtag">
                                         </div>
-                                        <button type="submit" class="btn btn-outline search-image-button">SEARCH</button>
+                                        <button type="submit" class="btn btn-outline">SEARCH</button>
                                     </form>
                                     
                                     <div class="showcase">
@@ -182,23 +179,7 @@
     <script type="text/javascript" src="/js/image-upload.js"></script>
     <script type="text/javascript" src="/js/search-image.js"></script>
       <!-- Custom Theme JavaScript -->
-    <script src="/js/owl.carousel.js"></script>
     <script src="/js/ekko-lightbox.js"></script>
-        <script>
-       $(document).ready(function() {
-          $("#postcode").owlCarousel({
-              autoPlay: 3000, //Set AutoPlay to 3 seconds
-              items : 3,
-              itemsDesktop : [1199,3],
-              itemsDesktopSmall : [979,3]
-          });
-        });
-        
-        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-            event.preventDefault();
-            $(this).ekkoLightbox();
-        });
-    </script>
 </body>
 
 </html>

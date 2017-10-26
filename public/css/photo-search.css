@@ -1,0 +1,176 @@
+/* ========== OTHER CSS STYLES TO LOAD ========== */
+@import url('main.css'); /* Loads the main.css styles for the website */
+
+body {
+	background:#000000; /* sets background color to black */
+}
+
+.alert-black {
+	color:#fff;
+	background-color:#000;
+	border-color:#545454;
+}
+
+#postcode .item{
+  margin: 3px;
+}
+
+#postcode .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ========== CSS STYLES FOR THE NEWSLETTER FORM ========== */
+
+input, textarea {
+  font-family: 'Varela Round', sans-serif; /* sets the font set for both input and textarea text to Valera Round */
+  font-size: 18px; /* Sets the font-size to 18 */
+  font-size: 0.7em;
+  color: black;  /* Sets the font color to black */
+}
+
+input::-ms-clear, textarea::-ms-clear {
+  display: none; 
+}
+
+.browse input[type="text"] {
+  border-radius: 0.2em;  /* sets the border radius to 0.2 */
+  height: 60px;  /* sets the height of the input box to 60 */
+}
+
+.browse .form-control {
+  border: 2.5px solid #828282; /* sets a border to the sign input/textarea */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.browse .form-control:focus {
+  border: 2.5px solid #ff5656; /* sets a border to the sign input/textarea */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.btn-outline {
+  padding: 18px 30px; /* gives padding to the top and bottom, leaves both sides at 0 */
+  cursor: pointer; /* makes sure the cursor is on pointer for the button */
+  background: transparent; /* gives a transparent background to the button */
+  color: #000; /* sets the text color on the button to white */
+  font-size: 0.9em; /* sets the font-size to 1.3 */
+  border: 2.5px solid #000; /* gives the button a border of 2.5 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  -webkit-transition: padding .5s;
+  transition: padding .5s;
+}
+
+.btn-outline:hover {
+  padding: 18px 60px; /* gives padding to the top and bottom, leaves both sides at 0 */
+  cursor: pointer; /* makes sure the cursor is on pointer for the button */
+  background: #000; /* gives a transparent background to the button */
+  color: #fff; /* sets the text color on the button to black */
+  font-size: 0.9em; /* sets the font-size to 1.3 */
+  border: 2.5px solid #000; /* gives the button a border of 2.5 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.gallery {
+    padding: 40px;
+}
+
+.gallery .thumbnail {
+    padding: 0;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: none;
+    transition: 0.15s ease-in-out;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}
+
+.gallery .thumbnail:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.gallery .lightbox img {
+    border-radius: 4px 4px 0 0;
+}
+
+.gallery .caption{
+    padding: 26px 30px;
+    text-align: center;
+}
+
+.gallery .caption h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.gallery .caption p {
+    font-size: 12px;
+    color: #7b7d7d;
+    margin: 0;
+}
+
+.baguetteBox-button {
+    background-color: transparent !important;
+}
+
+
+/* ========== MEDIA QUERIES FOR SMALL SCREENS ========== */
+
+.photo-search {
+    width: 100%;
+    height: auto;
+    padding: 10px 2px;
+    background: #ffffff;
+}
+
+.content {
+    height: auto; /* ensures that the height is fluid */
+    width: 100%; /* ensures that the width is edge to edge */
+    padding: 30px 10px; /* adds padding of 30 to the top and bottom, 10 to both sides */
+}
+
+.content h4 {
+    color: white; /* sets color of heading to white */
+}
+
+
+/* ========== MEDIA QUERIES FOR BIG SCREENS ========== */
+
+@media(min-width:768px) {
+    
+    .photo-search {
+        width: 100%;
+        height: auto;
+        padding: 10px 2px 0px;
+        background: #ffffff;
+    }
+       
+    .content {
+        height: auto; /* ensures the height is fluid */
+        width: 100%; /*  */
+        padding: 30px 10px; /* adds padding of 30 to the top and bottom, 10 to both sides */
+    }
+    
+    .content h4 {
+        color: white; /* set the font color to white */
+        letter-spacing: 1.3px; /* sets letter spacking to 1.3 */
+    }
+    
+}

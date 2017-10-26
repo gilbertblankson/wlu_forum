@@ -51,3 +51,5 @@ Route::post('/upload-image',"UserController@uploadImage");
 
 /*search image */
 Route::post('/search-image', "UserController@searchImage");
+
+Route::get('/photo-search', "UserController@showPhotoSearch");
